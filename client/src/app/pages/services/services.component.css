@@ -1,0 +1,17 @@
+/* services.component.css -- Ryan Watson -- 300920674 -- 02/06/19  */
+
+
+/* setting styles for ddservices page content, and icons */
+
+.top {
+    margin-top: 7em;
+    margin-bottom: 5em;
+}
+
+i {
+    font-size: 4em;
+}
+
+.fa-concierge-bell {
+    font-size: 1em;
+}

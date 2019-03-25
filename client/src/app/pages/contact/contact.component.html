@@ -1,0 +1,55 @@
+<!-- contact.component.html -- Ryan Watson -- 300920674 -- 02/06/19 -->
+<div class="top text-center">
+    <h1><i class="fa fa-envelope"></i> {{title}}</h1>
+    <img class="homeLogo" src="../../assets/cover.png">
+    <hr class="my-4">
+    <strong>If you're interested in contacting me, fill out the form below and send me a message:</strong><br /><br />
+
+    <!-- Link to Contact list if user is already logged in -->
+    <div *ngIf='isLoggedIn()' class='container text-center'>
+        <div class='row'>
+            <div class='col col-md-4'></div>
+            <div class='col col-md-4'>
+                <div class='card'>
+                    <h5 class='card-header alert-success'>To view my list of Contacts, check below. If you would like to be a contact, please add yourself.</h5>
+                    <div class='card-body'>
+                        <a routerLink='contact-list' class='btn btn-primary'>
+                            <i class='fas fa-users fa-lg'></i> Contact List
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class='col col-md-4'></div>
+        </div>
+    </div>
+</div>
+
+<br>
+<!-- form within jumbotron, including process method and variable settings -->
+<div class="jumbotron">
+    <div class="container">
+        <form (ngSubmit)="processForm()">
+            <div class="form-group">
+                <label for="inputFName">First Name</label>
+                <input class="form-control" id="inputFName" placeholder="John" [(ngModel)]="fName" name="fName">
+                <label for="inputLName">Last Name</label>
+                <input class="form-control" id="inputLName" placeholder="Doe" [(ngModel)]="lName" name="lName">
+            </div>
+            <div class="form-group">
+                <label for="inputNumber">Phone Number</label>
+                <input class="form-control" id="inputNumber" placeholder="647-777-7777" [(ngModel)]="number" name="number">
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Email Address</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com" [(ngModel)]="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="inputDescription">Message</label>
+                <textarea class="form-control" id="inputDescription" placeholder="Please describe the solution you are looking for..." rows="3" [(ngModel)]="message" name="message"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </div>
+        </form>
+    </div>
+</div>

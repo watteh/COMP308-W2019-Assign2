@@ -1,0 +1,23 @@
+<!-- app.component.html -- Ryan Watson -- 300920674 -- 02/06/19 -->
+
+<!-- navbar for site header -->
+<nav class="navbar navbar-expand-md fixed-top">
+    <img src="../assets/cover.png">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+            <i class="fas fa-bars"></i>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarContent">
+        <ul class="navbar-nav justify-content-center">
+            <li><a class="nav-item" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{ exact: true }"><i class="fas fa-shoe-prints"></i> Home</a></li>
+            <li><a class="nav-item" routerLinkActive="active" routerLink="/about"><i class="fas fa-portrait"></i> About</a></li>
+            <li><a class="nav-item" routerLinkActive="active" routerLink="/projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+            <li><a class="nav-item" routerLinkActive="active" routerLink="/services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+            <li><a class="nav-item" routerLinkActive="active" routerLink="/contact"><i class="fa fa-envelope"></i> Contact</a></li>
+            <li *ngIf="isLoggedIn()" class="nav-text text-white"><i class="fas fa-user"></i> Welcome, {{ user.displayName }}</li>
+            <li *ngIf="isLoggedIn()"><a class="nav-item" (click)="onLogoutClick()" routerLink="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <li *ngIf="!isLoggedIn()"><a class="nav-item" routerLinkActive="active" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        </ul>
+    </div>
+</nav>
+<router-outlet>
+</router-outlet>

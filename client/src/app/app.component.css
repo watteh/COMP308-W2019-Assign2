@@ -1,0 +1,39 @@
+/* app.component.css -- Ryan Watson -- 300920674 -- 02/06/19  */
+
+
+/* styles for navbar and items, logo, active links, and for toggle for mobile size */
+
+nav {
+    height: auto;
+    background-color: #303F9F;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+}
+
+.nav-item {
+    color: white;
+    margin: 1em;
+    height: auto;
+}
+
+img {
+    width: auto;
+    height: 4em;
+    object-fit: cover;
+}
+
+.active,
+.nav-item:hover {
+    color: #03A9F4;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.navbar-toggler {
+    position: absolute;
+    left: 15em;
+    top: 1em;
+}
