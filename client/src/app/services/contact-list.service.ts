@@ -16,8 +16,9 @@ export class ContactListService {
   private user: User;
   private authToken: any = null;
 
-  // URI for backend
-  private endpoint = 'http://localhost:3000/api/contact-list/';
+  // URI for backend - one for local, one for heroku
+  // private endpoint = 'http://localhost:3000/api/contact-list/';
+  private endpoint = 'https://watson-innovation.herokuapp.com/api/contact-list/';
 
   // Header options
   private httpOptions = {

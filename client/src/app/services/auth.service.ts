@@ -15,8 +15,9 @@ export class AuthService {
   user: User;
   private authToken: any;
 
-  // URI for backend
-  private endpoint = 'http://localhost:3000/api/';
+  // URI for backend - one for local, one for heroku
+  // private endpoint = 'http://localhost:3000/api/';
+  private endpoint = 'https://watson-innovation.herokuapp.com/api/';
 
   // Header options
   private httpOptions = {
