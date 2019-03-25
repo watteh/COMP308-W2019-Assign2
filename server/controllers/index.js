@@ -1,3 +1,5 @@
+// index.js -- Ryan Watson -- 300920674 -- 03/25/19
+
 let express = require('express');
 let router = express.Router();
 let passport = require('passport');
@@ -10,6 +12,7 @@ let DB = require('../config/db');
 let userModel = require('../models/user');
 let User = userModel.User; //alias
 
+// Method to process login
 module.exports.processLogin = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) {
@@ -52,6 +55,7 @@ module.exports.processLogin = (req, res, next) => {
     })(req, res, next);
 }
 
+// Method to process registration
 module.exports.processRegister = (req, res, next) => {
     // define a new User object
     let newUser = new User({
@@ -86,6 +90,7 @@ module.exports.processRegister = (req, res, next) => {
     );
 }
 
+// Method to process logout
 module.exports.performLogout = (req, res, next) => {
     req.logout();
     return res.json({

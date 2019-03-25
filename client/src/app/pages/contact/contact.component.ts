@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  // setting title variable; creating string variables for form submission
+  // Declaring variables
   title = `Contact Watson Innovation`;
   fName: string;
   lName: string;
@@ -18,12 +18,13 @@ export class ContactComponent implements OnInit {
   email: string;
   message: string;
 
+  // Constructor for imported modules
   constructor(route: ActivatedRoute, private authService: AuthService) {}
 
   ngOnInit() {
   }
 
-  // method to process form data and create an alert on the page; once okay is clicked, redirects to home page
+  // Method to process form data and create an alert on the page; once okay is clicked, redirects to home page
   processForm() {
     const allInfo = `${this.fName} ${this.lName} at email ${this.email} and #${this.number} says "${this.message}"`;
     alert(allInfo);

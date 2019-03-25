@@ -1,4 +1,5 @@
 // app.component.ts -- Ryan Watson -- 300920674 -- 02/06/19
+
 import { Component, OnInit } from '@angular/core';
 import { User } from './models/user';
 import { FlashMessagesService } from 'angular2-flash-messages';

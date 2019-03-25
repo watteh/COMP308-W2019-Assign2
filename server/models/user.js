@@ -1,3 +1,5 @@
+// user.js -- Ryan Watson -- 300920674 -- 03/25/19
+
 // require modules for our User Model
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
@@ -9,14 +11,6 @@ let userSchema = mongoose.Schema({
         trim: true,
         required: 'username is required'
     },
-
-    // taken out because password will be encrypted by passport-local-mongoose
-    // password: {
-    //     type: String,
-    //     default: '',
-    //     trim: true,
-    //     required: 'password is required'
-    // }
 
     email: {
         type: String,

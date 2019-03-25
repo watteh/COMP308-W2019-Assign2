@@ -1,3 +1,5 @@
+// contact-delete.component.ts -- Ryan Watson -- 300920674 -- 03/25/19
+
 import { Component, OnInit } from '@angular/core';
 
 import { ContactListService } from 'src/app/services/contact-list.service';
@@ -11,23 +13,29 @@ import { Contact } from 'src/app/models/contact';
   styleUrls: ['./contact-delete.component.css']
 })
 export class ContactDeleteComponent implements OnInit {
+  // Create variables
   title: string;
   contact: Contact;
 
+  // Constructor for modules
   constructor(private activatedRoute: ActivatedRoute, private flashMessage: FlashMessagesService,
               private contactListService: ContactListService, private router: Router) { }
 
   ngOnInit() {
+    // Initialize variables
     this.title = this.activatedRoute.snapshot.data.title;
     this.contact = new Contact();
 
+    // get contact id from url params
     this.activatedRoute.params.subscribe(params => {
       this.contact._id = params.id;
     });
 
+    // call method to delete contact
     this.deleteContact(this.contact);
   }
 
+  // Method to delete contact
   private deleteContact(contact: Contact): void {
     this.contactListService.deleteContact(contact).subscribe(data => {
       if (data.success) {
