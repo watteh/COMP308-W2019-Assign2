@@ -10,54 +10,6 @@ let DB = require('../config/db');
 let userModel = require('../models/user');
 let User = userModel.User; //alias
 
-// module.exports.displayHome = (req, res, next) => {
-//     res.render('index', {
-//         title: 'Home',
-//         displayName: req.user ? req.user.displayName : ''
-//     });
-// }
-
-// module.exports.displayAbout = (req, res, next) => {
-//     res.render('index', {
-//         title: 'About',
-//         displayName: req.user ? req.user.displayName : ''
-//     });
-// }
-
-// module.exports.displayServices = (req, res, next) => {
-//     res.render('index', {
-//         title: 'Services',
-//         displayName: req.user ? req.user.displayName : ''
-//     });
-// }
-
-// module.exports.displayProducts = (req, res, next) => {
-//     res.render('index', {
-//         title: 'Products',
-//         displayName: req.user ? req.user.displayName : ''
-//     });
-// }
-
-// module.exports.displayContact = (req, res, next) => {
-//     res.render('index', {
-//         title: 'Contact',
-//         displayName: req.user ? req.user.displayName : ''
-//     });
-// }
-
-// module.exports.displayLogin = (req, res, next) => {
-//     // Check if user is already logged in
-//     if (!req.user) {
-//         res.render('auth/login', {
-//             title: 'Login',
-//             messages: req.flash('loginMessage'),
-//             displayName: req.user ? req.user.displayName : ''
-//         });
-//     } else {
-//         return res.redirect('/');
-//     }
-// }
-
 module.exports.processLogin = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) {
@@ -99,18 +51,6 @@ module.exports.processLogin = (req, res, next) => {
         });
     })(req, res, next);
 }
-
-// module.exports.displayRegister = (req, res, next) => {
-//     if (!req.user) {
-//         res.render('auth/register', {
-//             title: 'Register',
-//             messages: req.flash('registerMessage'),
-//             displayName: req.user ? req.user.displayName : ''
-//         });
-//     } else {
-//         return res.redirect('/');
-//     }
-// }
 
 module.exports.processRegister = (req, res, next) => {
     // define a new User object
